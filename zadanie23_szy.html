@@ -1,0 +1,40 @@
+
+<html>
+<head>
+    <script language="JavaScript">
+    function drabina_berdys(){
+        var d_ber = parseFloat(document.getElementsByName('d')[0].value);
+        var x_ber = parseFloat(document.getElementsByName('x')[0].value);
+
+        drabina_ber = Math.sqrt(Math.pow(d_ber, 2) + Math.pow(x_ber, 2));
+
+        alert("Drabina = " + drabina_ber.toFixed(2) + " cm");
+        document.getElementsByName('drabina')[0].value = drabina_ber.toFixed(2);
+    }
+
+    function alfa_berdys(){
+        var d_ber = parseFloat(document.getElementsByName('d')[0].value);
+        var x_ber = parseFloat(document.getElementsByName('x')[0].value);
+
+        var sin_alfa_ber = d_ber/drabina_ber;
+        var alfa_ber = (Math.asin(sin_alfa_ber)) * 180 / Math.PI;
+
+        alert("Alfa = " + alfa_ber.toFixed(2));
+        document.getElementsByName('alfa')[0].value = alfa_ber.toFixed(2);
+    }
+    </script>
+</head>
+<body>
+    <form name="formularz" onsubmit="drabina_berdys(); alfa_berdys(); return false">
+            Podaj d=
+        <input size="6" name="d" id="input_d">
+            Podaj x=
+        <input size="6" name="x" id="input_x"><br><br>
+        <input TYPE="submit" Value="oblicz"><br><br>
+            Drabina=
+        <input size="6" name="drabina"><br>
+            Alfa=
+        <input size="6" name="alfa">
+    </form>
+</body>
+</html>
